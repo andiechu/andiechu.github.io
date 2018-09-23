@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<!--
+
+          _____                    _____                    _____
+         /\    \                  /\    \                  /\    \
+        /::\    \                /::\    \                /::\    \
+       /::::\    \              /::::\    \              /::::\    \
+      /::::::\    \            /::::::\    \            /::::::\    \
+     /:::/\:::\    \          /:::/\:::\    \          /:::/\:::\    \
+    /:::/  \:::\    \        /:::/__\:::\    \        /:::/  \:::\    \
+   /:::/    \:::\    \      /::::\   \:::\    \      /:::/    \:::\    \
+  /:::/    / \:::\    \    /::::::\   \:::\    \    /:::/    / \:::\    \
+ /:::/    /   \:::\    \  /:::/\:::\   \:::\    \  /:::/    /   \:::\ ___\
+/:::/____/     \:::\____\/:::/  \:::\   \:::\____\/:::/____/     \:::|    |
+\:::\    \      \::/    /\::/    \:::\  /:::/    /\:::\    \     /:::|____|
+ \:::\    \      \/____/  \/____/ \:::\/:::/    /  \:::\    \   /:::/    /
+  \:::\    \                       \::::::/    /    \:::\    \ /:::/    /
+   \:::\    \                       \::::/    /      \:::\    /:::/    /
+    \:::\    \                      /:::/    /        \:::\  /:::/    /
+     \:::\    \                    /:::/    /          \:::\/:::/    /
+      \:::\    \                  /:::/    /            \::::::/    /
+       \:::\____\                /:::/    /              \::::/    /
+        \::/    /                \::/    /                \::/____/
+         \/____/                  \/____/                  ~~
+
+Hi! Welcome to my website. I hope you can find whatever you are looking for here.
+This website is still a beta version. Feel free to email me if you find any bugs or have any suggestion.
+
+A Friendly Reminder: Do NOT contact me if you are a stalker!
+
+-->
+
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119539904-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-119539904-2');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        
+            浅谈 Max/MSP 中 Message 的用途
+            ▼▲
+        
+        
+        cad0420
+    </title>
+
+    <meta name="description" content="page.summary">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,700,900|Eczar:400,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/normalize.css">
+<link rel="stylesheet" href="../../css/fa.min.css">
+<link rel="stylesheet" href="../../css/github-gist.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/cad.css">
+
+    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">-->
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/highlight.pack.js"></script>
+<script src="../../js/slick.fixed.js"></script>
+<script src="../../js/md5.min.js"></script>
+    <script src="../../js/cad.js"></script>
+</head>
+<body>
+    <div class="page-loader">
+    <div class="loader">
+        <span class="loader-square row-1 col-1"></span>
+        <span class="loader-square row-1 col-2"></span>
+        <span class="loader-square row-1 col-3"></span>
+        <span class="loader-square row-2 col-1"></span>
+        <span class="loader-square row-2 col-2"></span>
+        <span class="loader-square row-2 col-3"></span>
+        <span class="loader-square row-3 col-1"></span>
+        <span class="loader-square row-3 col-2"></span>
+        <span class="loader-square row-3 col-3"></span>
+    </div>
+</div>
+    <nav class="menu"> <!-- show -->
+    <ul class="menu-list">
+        <li class="menu-list-item"><a href="../../about">About</a></li>
+        <li class="menu-list-item"><a href="../../portfolio">Portfolio</a></li>
+        <li class="menu-list-item"><a href="../../blog">Blog</a></li>
+    </ul>
+    <ul class="social-media-list">
+        <li class="social-media-list-item email">
+            <a href="mailto:angdichu@gmail.com">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item github">
+            <a href="https://github.com/andiechu" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item codepen">
+            <a href="https://codepen.io/cad0420/" target="_blank">
+                <i class="fab fa-codepen"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item instagram">
+            <a href="https://www.instagram.com/cad0420/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item vimeo">
+            <a href="https://vimeo.com/cad0420" target="_blank">
+                <i class="fab fa-vimeo-v"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item twitter">
+            <a href="https://twitter.com/andiechu" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+    <header>
+    <div class="menu-btn">  <!-- on-menu -->
+        <div class="menu-btn-line one">
+            <span class="menu-btn-dot one"></span>
+            <span class="menu-btn-dot two"></span>
+            <span class="menu-btn-dot three"></span>
+        </div>
+        <div class="menu-btn-line two">
+            <span class="menu-btn-dot one"></span>
+            <span class="menu-btn-dot two"></span>
+            <span class="menu-btn-dot three"></span>
+        </div>
+        <div class="menu-btn-line three">
+            <span class="menu-btn-dot one"></span>
+            <span class="menu-btn-dot two"></span>
+            <span class="menu-btn-dot three"></span>
+        </div>
+    </div>
+    <span class="menu-panel"></span>
+
+    
+        <div class="page-title">
+            <h1>Blog</h1>
+        </div>
+    
+</header>
+
+
+
+    <main class="main-post">
+    <div class="post-content content-div">
+        <div class="post-content-title">
+            <div class="post-content-title-hidden"></div>
+            <h1 class="post-content-detail-title">浅谈 Max/MSP 中 message 的用途</h1>
+        </div>
+
+        <div class="post-content-blog">
+            <div class="post-content-time">
+                <time>05/05/2018 15:05</time>
+            </div>
+            <div class="post-content-detail markdown">
+                <ul>
+<li>message box 的功能和用途：</li>
+</ul>
+<ol>
+<li>点击时生成信息</li>
+<li>当一个信息被收到时，生成新的信息</li>
+<li>储存并创建混合类型（文本、数字和列表型）的数据</li>
+<li>展示输入的信息</li>
+<li>用在其他对象上的指令（比如 open message、reset message）</li>
+</ol>
+<ul>
+<li><p>变量的占位符：<code>$1</code>、<code>$2</code> 等</p>
+</li>
+<li><p>参数的用法：</p>
+<ul>
+<li><code>append</code> 和 <code>prepend</code>，在输入的信息后面或者前面加上特定的信息段</li>
+</ul>
+</li>
+<li><p>使用 message 作为指令：</p>
+<ul>
+<li>改变下一个对象的外观，例如：<code>bgcolor 0.1 0. 0. 1.</code></li>
+<li><p><code>set</code> 改变 message box 的值重置，并且<strong>改变时不输出结果</strong>。因此，使用 <code>set</code> 可以达到输出不影响对后续对象的效果，如下个例子所示（另外，这个例子如果想要 output，可以在第二个 number box 上加一个 bang）：</p>
+  <img src="/blog/the-usage-of-message-in-max-msp/use-set-in-message.png" title="两个 number box 后面的 message box 值不变">
+</li>
+<li><p>如果想要知道某个对象的输入端口可以接收什么指令或 message，按住 <code>Control + 鼠标右击</code>，即可弹出这个端口接收的指令。</p>
+  <img src="/blog/the-usage-of-message-in-max-msp/see-inlet-message-list.png" title="查看接收指令">
+</li>
+</ul>
+</li>
+</ul>
+
+                <div class="post-content-detail-detail blog-detail">
+                    <div class="blog-detail-item category">Tech Note</div>
+                    
+                    <div class="blog-detail-item tag">Creative Coding</div>
+                    
+                    <div class="blog-detail-item tag">创意编程</div>
+                    
+                    <div class="blog-detail-item tag">Max/MSP/Jitter</div>
+                    
+                    <div class="blog-detail-item tag">Max</div>
+                    
+                </div>
+                <div class="blog-comment">
+                    
+                        
+                            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container"></div>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'f62c7f9d3eef2282132e',
+        clientSecret: '1ee86d762d950f17edf5b4a7d275ef05fd361c1f',
+        id: md5(window.location.pathname),
+        repo: 'blog_comments',
+        owner: 'andiechu',
+        admin: 'andiechu',
+        distractionFreeMode: 'true'
+    })
+    gitalk.render('gitalk-container')
+</script>
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+    <div class="scrollbar">
+    <span></span>
+</div>
+    <footer class="">
+    <a href="../../index.html">Andie Chu /// cad0420</a>
+</footer>
+</body>
+</html>

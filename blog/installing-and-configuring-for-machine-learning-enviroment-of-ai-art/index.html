@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<!--
+
+          _____                    _____                    _____
+         /\    \                  /\    \                  /\    \
+        /::\    \                /::\    \                /::\    \
+       /::::\    \              /::::\    \              /::::\    \
+      /::::::\    \            /::::::\    \            /::::::\    \
+     /:::/\:::\    \          /:::/\:::\    \          /:::/\:::\    \
+    /:::/  \:::\    \        /:::/__\:::\    \        /:::/  \:::\    \
+   /:::/    \:::\    \      /::::\   \:::\    \      /:::/    \:::\    \
+  /:::/    / \:::\    \    /::::::\   \:::\    \    /:::/    / \:::\    \
+ /:::/    /   \:::\    \  /:::/\:::\   \:::\    \  /:::/    /   \:::\ ___\
+/:::/____/     \:::\____\/:::/  \:::\   \:::\____\/:::/____/     \:::|    |
+\:::\    \      \::/    /\::/    \:::\  /:::/    /\:::\    \     /:::|____|
+ \:::\    \      \/____/  \/____/ \:::\/:::/    /  \:::\    \   /:::/    /
+  \:::\    \                       \::::::/    /    \:::\    \ /:::/    /
+   \:::\    \                       \::::/    /      \:::\    /:::/    /
+    \:::\    \                      /:::/    /        \:::\  /:::/    /
+     \:::\    \                    /:::/    /          \:::\/:::/    /
+      \:::\    \                  /:::/    /            \::::::/    /
+       \:::\____\                /:::/    /              \::::/    /
+        \::/    /                \::/    /                \::/____/
+         \/____/                  \/____/                  ~~
+
+Hi! Welcome to my website. I hope you can find whatever you are looking for here.
+This website is still a beta version. Feel free to email me if you find any bugs or have any suggestion.
+
+A Friendly Reminder: Do NOT contact me if you are a stalker!
+
+-->
+
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119539904-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-119539904-2');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        
+            艺术展上机器学习环境的搭建与配置记录
+            ▼▲
+        
+        
+        cad0420
+    </title>
+
+    <meta name="description" content="page.summary">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,700,900|Eczar:400,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/normalize.css">
+<link rel="stylesheet" href="../../css/fa.min.css">
+<link rel="stylesheet" href="../../css/github-gist.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/cad.css">
+
+    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">-->
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/highlight.pack.js"></script>
+<script src="../../js/slick.fixed.js"></script>
+<script src="../../js/md5.min.js"></script>
+    <script src="../../js/cad.js"></script>
+</head>
+<body>
+    <div class="page-loader">
+    <div class="loader">
+        <span class="loader-square row-1 col-1"></span>
+        <span class="loader-square row-1 col-2"></span>
+        <span class="loader-square row-1 col-3"></span>
+        <span class="loader-square row-2 col-1"></span>
+        <span class="loader-square row-2 col-2"></span>
+        <span class="loader-square row-2 col-3"></span>
+        <span class="loader-square row-3 col-1"></span>
+        <span class="loader-square row-3 col-2"></span>
+        <span class="loader-square row-3 col-3"></span>
+    </div>
+</div>
+    <nav class="menu"> <!-- show -->
+    <ul class="menu-list">
+        <li class="menu-list-item"><a href="../../about">About</a></li>
+        <li class="menu-list-item"><a href="../../portfolio">Portfolio</a></li>
+        <li class="menu-list-item"><a href="../../blog">Blog</a></li>
+    </ul>
+    <ul class="social-media-list">
+        <li class="social-media-list-item email">
+            <a href="mailto:angdichu@gmail.com">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item github">
+            <a href="https://github.com/andiechu" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item codepen">
+            <a href="https://codepen.io/cad0420/" target="_blank">
+                <i class="fab fa-codepen"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item instagram">
+            <a href="https://www.instagram.com/cad0420/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item vimeo">
+            <a href="https://vimeo.com/cad0420" target="_blank">
+                <i class="fab fa-vimeo-v"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item twitter">
+            <a href="https://twitter.com/andiechu" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+    <header>
+    <div class="menu-btn">  <!-- on-menu -->
+        <div class="menu-btn-line one">
+            <span class="menu-btn-dot one"></span>
+            <span class="menu-btn-dot two"></span>
+            <span class="menu-btn-dot three"></span>
+        </div>
+        <div class="menu-btn-line two">
+            <span class="menu-btn-dot one"></span>
+            <span class="menu-btn-dot two"></span>
+            <span class="menu-btn-dot three"></span>
+        </div>
+        <div class="menu-btn-line three">
+            <span class="menu-btn-dot one"></span>
+            <span class="menu-btn-dot two"></span>
+            <span class="menu-btn-dot three"></span>
+        </div>
+    </div>
+    <span class="menu-panel"></span>
+
+    
+        <div class="page-title">
+            <h1>Blog</h1>
+        </div>
+    
+</header>
+
+
+
+    <main class="main-post">
+    <div class="post-content content-div">
+        <div class="post-content-title">
+            <div class="post-content-title-hidden"></div>
+            <h1 class="post-content-detail-title">艺术展上机器学习环境的搭建与配置记录</h1>
+        </div>
+
+        <div class="post-content-blog">
+            <div class="post-content-time">
+                <time>05/15/2018 14:05</time>
+            </div>
+            <div class="post-content-detail markdown">
+                <p>最近公司要办一个艺术展，主要都是通过人工智能生成的互动作品。为了运行这些作品，我帮助公司配置了5台计算机作为开发环境。Linux 系统上坑比较多，这里记录一下碰到的问题，给以后其他人做一个参考。</p>
+<h2 id="0x00-硬件准备"><a href="#0x00-硬件准备" class="headerlink" title="0x00 硬件准备"></a>0x00 硬件准备</h2><ul>
+<li>一台安装了 Linux 的 PC（具体安装方法如下文所示）</li>
+<li>最关键的是显卡的性能：至少 4 GB VRAM 的 NVIDIA 显卡（推荐 GTX 1080 ti 或 Titan X, GTX 1070 或 1060 也可以。GTX 1050 或许也可以，但是可能帧数会比较低、会出现卡顿）</li>
+<li>CPU：虽然没有显卡的参数重要，但是对最小处理速度仍然有要求，推荐是 Intel i5 及以上的配置。内存 16 GB 以上性能会比较好。</li>
+</ul>
+<h2 id="0x01-安装-Ubuntu-16-04-LTS"><a href="#0x01-安装-Ubuntu-16-04-LTS" class="headerlink" title="0x01 安装 Ubuntu 16.04 LTS"></a>0x01 安装 Ubuntu 16.04 LTS</h2><p>目前推荐的系统是 Ubuntu 16.04 LTS 发行版，但是 17.x（稳定版本的）也可以。Debian 理论上也可以，喜欢折腾的同学可以试着安装看看。</p>
+<h4 id="1-制作-U-盘安装盘"><a href="#1-制作-U-盘安装盘" class="headerlink" title="1. 制作 U 盘安装盘"></a>1. 制作 U 盘安装盘</h4><h4 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h4><p>分区是朋友推荐的最简化的分区方案：</p>
+<ul>
+<li>/ ext4 主分区 100GB （放在硬盘扇区的头上）</li>
+<li>swap 16GB</li>
+<li>/home ext4 主分区 剩下的硬盘空间全部放这个，不分 /usr 等其他分区了</li>
+</ul>
+<h2 id="0x02-安装相关支持软件和-GPU-驱动"><a href="#0x02-安装相关支持软件和-GPU-驱动" class="headerlink" title="0x02 安装相关支持软件和 GPU 驱动"></a>0x02 安装相关支持软件和 GPU 驱动</h2><h4 id="1-支持性软件的安装"><a href="#1-支持性软件的安装" class="headerlink" title="1. 支持性软件的安装"></a>1. 支持性软件的安装</h4><h5 id="a-ShadowSocks-安装和配置"><a href="#a-ShadowSocks-安装和配置" class="headerlink" title="a. ShadowSocks 安装和配置"></a>a. ShadowSocks 安装和配置</h5><ol>
+<li>Linux 下使用 qt5 版本，<a href="https://github.com/shadowsocks/shadowsocks-qt5/realeases" target="_blank" rel="noopener">去 Github 下载</a>，可以选择 .AppImage 版本</li>
+<li>进入下载所在的文件夹后，首先给它添加可执行权限：<code>chmod a+x Shadowsocks-Qt5-VERSION-PLATFORM.AppImage</code></li>
+<li>可以直接执行这个文件了</li>
+<li>给浏览器增加代理插件，比如 SwitchyOmega 等。各种配置都不再详细阐述</li>
+</ol>
+<h5 id="b-安装-git"><a href="#b-安装-git" class="headerlink" title="b. 安装 git"></a>b. 安装 git</h5><p>按照<a href="https://git-scm.com/download/linux" target="_blank" rel="noopener">官网的安装指示</a>安装。由于我的系统用的是 LTS 版本，所以按照稳定版的 Git 安装。</p>
+<p>如果你的系统在用 apt-get 安装 Git 时显示缺少一些依赖，可能是因为你的系统中的 apt-get 版本太老了，首先需要升级 apt-get：<code>sudo apt-get update</code>。然后升级系统的包并修正坏掉的包：<code>sudo apt-get -f dist-upgrade</code>。仅修补坏掉的包：<code>sudo apt-get -f install</code></p>
+<h5 id="c-编辑器安装（atom）"><a href="#c-编辑器安装（atom）" class="headerlink" title="c. 编辑器安装（atom）"></a>c. 编辑器安装（atom）</h5><ol>
+<li>官网下载 .deb 的安装包</li>
+<li>到下载的目录下，执行：<code>sudo dpkg -i atom-VERSION.deb</code></li>
+</ol>
+<h5 id="d-安装-CUDA-Toolkit-9-0"><a href="#d-安装-CUDA-Toolkit-9-0" class="headerlink" title="d. 安装 CUDA Toolkit 9.0"></a>d. 安装 CUDA Toolkit 9.0</h5><p>按照<a href="https://gist.github.com/zhanwenchen/e520767a409325d9961072f666815bb8" target="_blank" rel="noopener">这个英文教程</a>安装</p>
+<p>需要注意的是，我们需要安装的是 9.0 版本，而不是最新的 9.1 版本（也许 9.1 版本也可以用，但是安装 9.1 时，不应该再按照上述英文教程安装 384 的驱动，而应该安装 9.1 适配的 387 版本。这个有兴趣的同学可以自行探索，我之后有时间也会折腾一下试试。）</p>
+<p>这里有几个问题：</p>
+<ol>
+<li>勘误：文中安装驱动时的指令 <code>sudo apt-get nvidia-384 nvidia-modprobe</code> 应为 <code>sudo apt-get install nvidia-384 nvidia-modprobe</code></li>
+<li>CUDA Toolkit 9.0 的下载地址是 <a href="https://developer.nvidia.com/cuda-90-download-archive?target_os=Linux" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-90-download-archive?target_os=Linux</a>。安装按照 NVIDIA 官网上的安装指令操作。安装时，在询问是否要安装 driver 的时候，选择否（n）。其他安装问题和路径问题都选择是（y）即可。</li>
+</ol>
+<h5 id="e-安装-NVIDIA-的-cuDNN"><a href="#e-安装-NVIDIA-的-cuDNN" class="headerlink" title="e. 安装 NVIDIA 的 cuDNN"></a>e. 安装 NVIDIA 的 cuDNN</h5><p>cuDNN 下载地址是：<a href="http://developer.nvidia.com/rdp/cudnn-download" target="_blank" rel="noopener">http://developer.nvidia.com/rdp/cudnn-download</a></p>
+<p>首选需要注册一个 NVIDIA developer membership，登录以后，在下载时选择适配 CUDA Toolkit 版本的 cuDNN 版本，安装即可</p>
+<h2 id="0x03-安装-Python-和相关的机器学习库"><a href="#0x03-安装-Python-和相关的机器学习库" class="headerlink" title="0x03 安装 Python 和相关的机器学习库"></a>0x03 安装 Python 和相关的机器学习库</h2><h4 id="1-我们使用-Python3"><a href="#1-我们使用-Python3" class="headerlink" title="1. 我们使用 Python3"></a>1. 我们使用 Python3</h4><p>Ubuntu 16.04 LTS 自带的 Python3 版本是 Python3.5.x，我之前安装了python 3.6，反而会让系统很多依赖 Python 的指令直接崩溃（特别是 Terminal 啊啊啊啊啊啊啊好坑）。所以我们暂时不要动，保持 Python 3.5 版本。当然如果喜欢折腾，完全可以一点点攻克这个问题，但是我们的目标是快速地搭建出展出需要的稳定环境（或者学习）所以就暂时先不管了。</p>
+<h4 id="2-安装-pip"><a href="#2-安装-pip" class="headerlink" title="2. 安装 pip"></a>2. 安装 pip</h4><ol>
+<li>首先安装 curl：<code>sudo apt-get install curl</code></li>
+<li>然后就可以按照官方参考说明上的安装指导进行安装了：<a href="https://pip.pypa.io/en/stable/installing/" target="_blank" rel="noopener">https://pip.pypa.io/en/stable/installing/</a></li>
+<li>注意，如果你的系统默认 Python 是 2.x版本的，执行命令时候要用 Python3，而且记得执行时候的系统权限</li>
+</ol>
+<h4 id="3-安装机器学习艺术相关的各种-Python-库"><a href="#3-安装机器学习艺术相关的各种-Python-库" class="headerlink" title="3. 安装机器学习艺术相关的各种 Python 库"></a>3. 安装机器学习艺术相关的各种 Python 库</h4><p>我们这次安装了以下几个库：</p>
+<ul>
+<li><p><a href="http://genekogan.com" target="_blank" rel="noopener">Gene Kogan</a> 的“风格转移”作品</p>
+  <img src="/blog/installing-and-configuring-for-machine-learning-enviroment-of-ai-art/ml_cubist_expressionist_impressionist.jpg" title="Style Transfer">
+<ul>
+<li>Opencv-Python: <code>pip install opencv-python</code></li>
+<li>Chainer: <code>pip install chainer</code></li>
+<li>Cupy: 如果 pip 版本比较老了，首先升级一下 <code>pip install -U setuptools pip</code> 然后再安装<strong>与 CUDA Toolkit 对应版本</strong>的 cupy 库（我的CUDA Toolkit 是 9.0，所以是 cuda-90）：<code>pip install cupy-cuda90</code></li>
+</ul>
+</li>
+<li><p><a href="http://genekogan.com" target="_blank" rel="noopener">Gene Kogan</a> 的“肉木偶”作品</p>
+  <img src="/blog/installing-and-configuring-for-machine-learning-enviroment-of-ai-art/meat-puppet.jpg" title="Meat Puppet">
+<ul>
+<li>Opencv-Python: <code>pip install opencv-python</code></li>
+<li>Tensorflow: <code>pip install tensorflow-gpu</code></li>
+<li>dlib: 首先要安装 cmake：<code>pip install cmake</code>，然后安装 dlib 库：<code>pip install dlib</code>（如果失败了，可以去 <a href="https://github.com/davisking/dlib" target="_blank" rel="noopener">dlib 的 Github 库</a>上面 clone，然后按照它的说明 build 安装）</li>
+<li>Pyqtgraph: <code>pip install pyqtgraph</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="0x04-测试"><a href="#0x04-测试" class="headerlink" title="0x04 测试"></a>0x04 测试</h2><h4 id="1-环境测试"><a href="#1-环境测试" class="headerlink" title="1. 环境测试"></a>1. 环境测试</h4><p>运行一下 Python3，导入几个库试试，如果出现任何问题就 OK：</p>
+<ul>
+<li><p><a href="http://genekogan.com" target="_blank" rel="noopener">Gene Kogan</a> 的“风格转移”作品</p>
+<ul>
+<li><code>import chainer</code></li>
+<li><code>from chainer import cuda, Variable, serializers</code></li>
+<li><code>import cv2</code></li>
+</ul>
+</li>
+<li><p><a href="http://genekogan.com" target="_blank" rel="noopener">Gene Kogan</a> 的“肉木偶”作品</p>
+<ul>
+<li><code>import tensorflow</code></li>
+<li><code>import cv2</code></li>
+<li><code>import dlib</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="2-运行代码"><a href="#2-运行代码" class="headerlink" title="2. 运行代码"></a>2. 运行代码</h4><p>一般上面安装测试通过了，你的环境就已经搭建成功了！如果你有代码，也可以运行试试。</p>
+<h2 id="0x05-其他安装"><a href="#0x05-其他安装" class="headerlink" title="0x05 其他安装"></a>0x05 其他安装</h2><h3 id="摄像头"><a href="#摄像头" class="headerlink" title="摄像头"></a>摄像头</h3><p>一般直接插上就可以用了。如果没有，可以用 <code>lsusb</code> 指令看一下 USB 上的情况</p>
+<h2 id="0x06-安装中遇到的各种坑爹问题"><a href="#0x06-安装中遇到的各种坑爹问题" class="headerlink" title="0x06 安装中遇到的各种坑爹问题"></a>0x06 安装中遇到的各种坑爹问题</h2><p>一口气配了 5 台电脑，中间各个电脑遇到的问题层出不穷，同样的配置和硬件竟然还遇到不同的问题（当然我觉得完全可能是电脑店装机的人装了什么蜜汁盗版 Windows 的原因【微笑】）</p>
+<p>但是这些问题完全可以靠 Google 解决！这里记录一下可能遇到的问题，以及解决办法。</p>
+<ul>
+<li>由于安装了 CUDA Toolkit 9.1 导致的一些问题，需要卸载删除 9.1 版本，再按照指示重新安装 9.0 版本。</li>
+<li>安装 dlib 库之前，必须要有 cmake，否则会安装失败。</li>
+<li>dlib 安装可以<a href="https://github.com/davisking/dlib" target="_blank" rel="noopener">到这里</a>，安装完 C++ 库以后，还要接着按照 Readme.md 上面的“Compiling dlib Python API”继续。</li>
+<li>已经安装好了 cmake，但是在 dlib 安装时仍然出现了 “Python.h: no such file or directory” 的话，需要先安装 python-dev。如果使用的是 Python 3.5，就执行 <code>sudo apt-get install python3-dev</code>；如果使用的是 Python 3.6，则需要执行 <code>sudo apt-get install python3.6-dev</code></li>
+<li>cupy 库需要指定 CUDA 的版本安装，否则会安装失败。</li>
+<li>pyqtgraph 库运行，还需要 PyQt 的库。我们选择装 PyQt5 即可：<code>pip install PyQt5</code></li>
+</ul>
+<h2 id="0x07-补充资料"><a href="#0x07-补充资料" class="headerlink" title="0x07 补充资料"></a>0x07 补充资料</h2><ol>
+<li><a href="https://gist.github.com/zhanwenchen/e520767a409325d9961072f666815bb8" target="_blank" rel="noopener">如何在 UBUNTU 16.04 LTS 上安装 NVIDIA 驱动和 CUDA 9.0</a></li>
+</ol>
+
+                <div class="post-content-detail-detail blog-detail">
+                    <div class="blog-detail-item category">Tech Note</div>
+                    
+                    <div class="blog-detail-item tag">机器学习</div>
+                    
+                    <div class="blog-detail-item tag">Machine Learning</div>
+                    
+                    <div class="blog-detail-item tag">人工智能</div>
+                    
+                </div>
+                <div class="blog-comment">
+                    
+                        
+                            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container"></div>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'f62c7f9d3eef2282132e',
+        clientSecret: '1ee86d762d950f17edf5b4a7d275ef05fd361c1f',
+        id: md5(window.location.pathname),
+        repo: 'blog_comments',
+        owner: 'andiechu',
+        admin: 'andiechu',
+        distractionFreeMode: 'true'
+    })
+    gitalk.render('gitalk-container')
+</script>
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+    <div class="scrollbar">
+    <span></span>
+</div>
+    <footer class="">
+    <a href="../../index.html">Andie Chu /// cad0420</a>
+</footer>
+</body>
+</html>

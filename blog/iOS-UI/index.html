@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<!--
+
+          _____                    _____                    _____
+         /\    \                  /\    \                  /\    \
+        /::\    \                /::\    \                /::\    \
+       /::::\    \              /::::\    \              /::::\    \
+      /::::::\    \            /::::::\    \            /::::::\    \
+     /:::/\:::\    \          /:::/\:::\    \          /:::/\:::\    \
+    /:::/  \:::\    \        /:::/__\:::\    \        /:::/  \:::\    \
+   /:::/    \:::\    \      /::::\   \:::\    \      /:::/    \:::\    \
+  /:::/    / \:::\    \    /::::::\   \:::\    \    /:::/    / \:::\    \
+ /:::/    /   \:::\    \  /:::/\:::\   \:::\    \  /:::/    /   \:::\ ___\
+/:::/____/     \:::\____\/:::/  \:::\   \:::\____\/:::/____/     \:::|    |
+\:::\    \      \::/    /\::/    \:::\  /:::/    /\:::\    \     /:::|____|
+ \:::\    \      \/____/  \/____/ \:::\/:::/    /  \:::\    \   /:::/    /
+  \:::\    \                       \::::::/    /    \:::\    \ /:::/    /
+   \:::\    \                       \::::/    /      \:::\    /:::/    /
+    \:::\    \                      /:::/    /        \:::\  /:::/    /
+     \:::\    \                    /:::/    /          \:::\/:::/    /
+      \:::\    \                  /:::/    /            \::::::/    /
+       \:::\____\                /:::/    /              \::::/    /
+        \::/    /                \::/    /                \::/____/
+         \/____/                  \/____/                  ~~
+
+Hi! Welcome to my website. I hope you can find whatever you are looking for here.
+This website is still a beta version. Feel free to email me if you find any bugs or have any suggestion.
+
+A Friendly Reminder: Do NOT contact me if you are a stalker!
+
+-->
+
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119539904-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-119539904-2');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        
+            iOS 开发学习笔记：界面的自定义
+            ▼▲
+        
+        
+        cad0420
+    </title>
+
+    <meta name="description" content="config.description">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,700,900|Eczar:400,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/normalize.css">
+<link rel="stylesheet" href="../../css/fa.min.css">
+<link rel="stylesheet" href="../../css/github-gist.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/cad.css">
+
+    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">-->
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/highlight.pack.js"></script>
+<script src="../../js/slick.fixed.js"></script>
+<script src="../../js/md5.min.js"></script>
+    <script src="../../js/cad.js"></script>
+</head>
+<body>
+    <div class="page-loader">
+    <div class="loader">
+        <span class="loader-square row-1 col-1"></span>
+        <span class="loader-square row-1 col-2"></span>
+        <span class="loader-square row-1 col-3"></span>
+        <span class="loader-square row-2 col-1"></span>
+        <span class="loader-square row-2 col-2"></span>
+        <span class="loader-square row-2 col-3"></span>
+        <span class="loader-square row-3 col-1"></span>
+        <span class="loader-square row-3 col-2"></span>
+        <span class="loader-square row-3 col-3"></span>
+    </div>
+</div>
+    <nav class="menu"> <!-- show -->
+    <ul class="menu-list">
+        <li class="menu-list-item"><a href="../../about">About</a></li>
+        <li class="menu-list-item"><a href="../../portfolio">Portfolio</a></li>
+        <li class="menu-list-item"><a href="../../blog">Blog</a></li>
+    </ul>
+    <ul class="social-media-list">
+        <li class="social-media-list-item email">
+            <a href="mailto:angdichu@gmail.com">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item github">
+            <a href="https://github.com/andiechu" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item codepen">
+            <a href="https://codepen.io/cad0420/" target="_blank">
+                <i class="fab fa-codepen"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item instagram">
+            <a href="https://www.instagram.com/cad0420/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item vimeo">
+            <a href="https://vimeo.com/cad0420" target="_blank">
+                <i class="fab fa-vimeo-v"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item twitter">
+            <a href="https://twitter.com/andiechu" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+    <header>
+    <div class="menu-btn">  <!-- on-menu -->
+        <div class="menu-btn-line one">
+            <span class="menu-btn-dot one"></span>
+            <span class="menu-btn-dot two"></span>
+            <span class="menu-btn-dot three"></span>
+        </div>
+        <div class="menu-btn-line two">
+            <span class="menu-btn-dot one"></span>
+            <span class="menu-btn-dot two"></span>
+            <span class="menu-btn-dot three"></span>
+        </div>
+        <div class="menu-btn-line three">
+            <span class="menu-btn-dot one"></span>
+            <span class="menu-btn-dot two"></span>
+            <span class="menu-btn-dot three"></span>
+        </div>
+    </div>
+    <span class="menu-panel"></span>
+
+    
+        <div class="page-title">
+            <h1>Blog</h1>
+        </div>
+    
+</header>
+
+
+
+    <main class="main-post">
+    <div class="post-content content-div">
+        <div class="post-content-title">
+            <div class="post-content-title-hidden"></div>
+            <h1 class="post-content-detail-title">iOS 开发学习笔记：界面的自定义</h1>
+        </div>
+
+        <div class="post-content-blog">
+            <div class="post-content-time">
+                <time>01/08/2015 17:01</time>
+            </div>
+            <div class="post-content-detail markdown">
+                <p>前几天已经实现了豆瓣的登陆授权，用的比较简单的 UIWebView 中网页方式，没有自己使用界面模拟授权。</p>
+<p>今天开始做豆瓣的首页——即关注的人的广播页面。设计是用自定义的 UITableView  展示。今天学习下 Table View 的自定义。暂时没有用代码实现，继续用 storyboard。</p>
+<p>参考材料：</p>
+<ul>
+<li>_官方文档：<a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/TableView_iPhone/AboutTableViewsiPhone/AboutTableViewsiPhone.html" target="_blank" rel="noopener">Table View Programming Guide for iOS</a>_</li>
+<li><em>iOS Programming The Big Nerd Ranch Guide 4th Edition</em></li>
+<li>_官方文档：<a href="https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/index.html#//apple_ref/doc/uid/TP40006556" target="_blank" rel="noopener">iOS Human Interface Guidelines</a>_</li>
+</ul>
+<h2 id="I-基础知识"><a href="#I-基础知识" class="headerlink" title="I 基础知识"></a>I 基础知识</h2><p>两种基本的形式：<code>plain</code> 和 <code>grouped</code>，前者是不可分割的列表，后者有分离的 sections。</p>
+<p>使用 cell 画出，即 <code>UITableViewCell</code> 类：</p>
+<ul>
+<li><p>默认的四个 cell 的 style：</p>
+<figure class="highlight crystal"><table><tr><td class="code"><pre><span class="line">typedef <span class="class"><span class="keyword">enum</span> &#123;</span></span><br><span class="line">	UITableViewCellStyleDefault,</span><br><span class="line">	UITableViewCellStyleValue1,</span><br><span class="line">	UITableViewCellStyleValue2,</span><br><span class="line">	UITableViewCellStyleSubtitle</span><br><span class="line">&#125; UITableViewCellStyle;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>两个需要 data source 的方法：列表的数量、某个 index 处的 cell（<code>tableView:cellForRowAtIndexPath:</code>）</p>
+</li>
+<li>配置 cell 的内容，在 <code>tableView:cellForRowAtIndex:</code> 里面。</li>
+<li>复用某个 cell，可以用方法 <code>dequeueReusableCellWithIdentifier:</code></li>
+<li>修改某个 cell 的外观和动作，用代理。在代理方法 <code>tableView:willDisplayCell:forRowAtIndexPath:</code> 中设置背景等属性，这个方法可以进行 cell 显示出前最后的更改，这个方法中只能进行被 table view 之前就设置好的与状态相关的属性，内容不应该在这里设置。</li>
+</ul>
+<h3 id="自定义-cell-内容"><a href="#自定义-cell-内容" class="headerlink" title="自定义 cell 内容"></a>自定义 cell 内容</h3><ul>
+<li>两种方法：<ol>
+<li>为 cell 的内容 view 加 subviews</li>
+<li>自定义一个 <code>UITableViewCell</code> 的子类</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>待续……</p>
+</blockquote>
+
+                <div class="post-content-detail-detail blog-detail">
+                    <div class="blog-detail-item category">Tech Note</div>
+                    
+                    <div class="blog-detail-item tag">iOS</div>
+                    
+                    <div class="blog-detail-item tag">客户端开发</div>
+                    
+                    <div class="blog-detail-item tag">UI</div>
+                    
+                </div>
+                <div class="blog-comment">
+                    
+                        
+                            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container"></div>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'f62c7f9d3eef2282132e',
+        clientSecret: '1ee86d762d950f17edf5b4a7d275ef05fd361c1f',
+        id: md5(window.location.pathname),
+        repo: 'blog_comments',
+        owner: 'andiechu',
+        admin: 'andiechu',
+        distractionFreeMode: 'true'
+    })
+    gitalk.render('gitalk-container')
+</script>
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+    <div class="scrollbar">
+    <span></span>
+</div>
+    <footer class="">
+    <a href="../../index.html">Andie Chu /// cad0420</a>
+</footer>
+</body>
+</html>

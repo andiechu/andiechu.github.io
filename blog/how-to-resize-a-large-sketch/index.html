@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<!--
+
+          _____                    _____                    _____
+         /\    \                  /\    \                  /\    \
+        /::\    \                /::\    \                /::\    \
+       /::::\    \              /::::\    \              /::::\    \
+      /::::::\    \            /::::::\    \            /::::::\    \
+     /:::/\:::\    \          /:::/\:::\    \          /:::/\:::\    \
+    /:::/  \:::\    \        /:::/__\:::\    \        /:::/  \:::\    \
+   /:::/    \:::\    \      /::::\   \:::\    \      /:::/    \:::\    \
+  /:::/    / \:::\    \    /::::::\   \:::\    \    /:::/    / \:::\    \
+ /:::/    /   \:::\    \  /:::/\:::\   \:::\    \  /:::/    /   \:::\ ___\
+/:::/____/     \:::\____\/:::/  \:::\   \:::\____\/:::/____/     \:::|    |
+\:::\    \      \::/    /\::/    \:::\  /:::/    /\:::\    \     /:::|____|
+ \:::\    \      \/____/  \/____/ \:::\/:::/    /  \:::\    \   /:::/    /
+  \:::\    \                       \::::::/    /    \:::\    \ /:::/    /
+   \:::\    \                       \::::/    /      \:::\    /:::/    /
+    \:::\    \                      /:::/    /        \:::\  /:::/    /
+     \:::\    \                    /:::/    /          \:::\/:::/    /
+      \:::\    \                  /:::/    /            \::::::/    /
+       \:::\____\                /:::/    /              \::::/    /
+        \::/    /                \::/    /                \::/____/
+         \/____/                  \/____/                  ~~
+
+Hi! Welcome to my website. I hope you can find whatever you are looking for here.
+This website is still a beta version. Feel free to email me if you find any bugs or have any suggestion.
+
+A Friendly Reminder: Do NOT contact me if you are a stalker!
+
+-->
+
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119539904-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-119539904-2');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        
+            如何缩放比屏幕尺寸大的 Processing 草图
+            ▼▲
+        
+        
+        cad0420
+    </title>
+
+    <meta name="description" content="page.summary">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,700,900|Eczar:400,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/normalize.css">
+<link rel="stylesheet" href="../../css/fa.min.css">
+<link rel="stylesheet" href="../../css/github-gist.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/cad.css">
+
+    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">-->
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/highlight.pack.js"></script>
+<script src="../../js/slick.fixed.js"></script>
+<script src="../../js/md5.min.js"></script>
+    <script src="../../js/cad.js"></script>
+</head>
+<body>
+    <div class="page-loader">
+    <div class="loader">
+        <span class="loader-square row-1 col-1"></span>
+        <span class="loader-square row-1 col-2"></span>
+        <span class="loader-square row-1 col-3"></span>
+        <span class="loader-square row-2 col-1"></span>
+        <span class="loader-square row-2 col-2"></span>
+        <span class="loader-square row-2 col-3"></span>
+        <span class="loader-square row-3 col-1"></span>
+        <span class="loader-square row-3 col-2"></span>
+        <span class="loader-square row-3 col-3"></span>
+    </div>
+</div>
+    <nav class="menu"> <!-- show -->
+    <ul class="menu-list">
+        <li class="menu-list-item"><a href="../../about">About</a></li>
+        <li class="menu-list-item"><a href="../../portfolio">Portfolio</a></li>
+        <li class="menu-list-item"><a href="../../blog">Blog</a></li>
+    </ul>
+    <ul class="social-media-list">
+        <li class="social-media-list-item email">
+            <a href="mailto:angdichu@gmail.com">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item github">
+            <a href="https://github.com/andiechu" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item codepen">
+            <a href="https://codepen.io/cad0420/" target="_blank">
+                <i class="fab fa-codepen"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item instagram">
+            <a href="https://www.instagram.com/cad0420/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item vimeo">
+            <a href="https://vimeo.com/cad0420" target="_blank">
+                <i class="fab fa-vimeo-v"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item twitter">
+            <a href="https://twitter.com/andiechu" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+    <header>
+    <div class="menu-btn">  <!-- on-menu -->
+        <div class="menu-btn-line one">
+            <span class="menu-btn-dot one"></span>
+            <span class="menu-btn-dot two"></span>
+            <span class="menu-btn-dot three"></span>
+        </div>
+        <div class="menu-btn-line two">
+            <span class="menu-btn-dot one"></span>
+            <span class="menu-btn-dot two"></span>
+            <span class="menu-btn-dot three"></span>
+        </div>
+        <div class="menu-btn-line three">
+            <span class="menu-btn-dot one"></span>
+            <span class="menu-btn-dot two"></span>
+            <span class="menu-btn-dot three"></span>
+        </div>
+    </div>
+    <span class="menu-panel"></span>
+
+    
+        <div class="page-title">
+            <h1>Blog</h1>
+        </div>
+    
+</header>
+
+
+
+    <main class="main-post">
+    <div class="post-content content-div">
+        <div class="post-content-title">
+            <div class="post-content-title-hidden"></div>
+            <h1 class="post-content-detail-title">如何缩放比屏幕尺寸大的 Processing 草图</h1>
+        </div>
+
+        <div class="post-content-blog">
+            <div class="post-content-time">
+                <time>03/26/2018 14:03</time>
+            </div>
+            <div class="post-content-detail markdown">
+                <h2 id="Q："><a href="#Q：" class="headerlink" title="Q："></a>Q：</h2><p>如果 size() 方法设置的尺寸比电脑分辨率大，怎么才能看到屏幕以外的部分呢？</p>
+<h2 id="A："><a href="#A：" class="headerlink" title="A："></a>A：</h2><p>Processing 虽然有一个 Presentation Mode，但是实际上它没有自己缩放的功能。所以说，我们只能靠自己在绘图过程中进行缩放。</p>
+<p>目前可以想到的方法有以下两种：</p>
+<h3 id="0x00-一种方法是使用-scale-函数"><a href="#0x00-一种方法是使用-scale-函数" class="headerlink" title="0x00 一种方法是使用 scale() 函数"></a>0x00 一种方法是使用 <code>scale()</code> 函数</h3><p>需要在 draw() 函数里面第一行就加上 <code>scale()</code> 方法。</p>
+<p><em>具体使用方法见 <a href="https://www.processing.org/reference/scale_.html" target="_blank" rel="noopener">scale() reference</a></em></p>
+<h3 id="0x01-另一种方法是使用-PGraphics"><a href="#0x01-另一种方法是使用-PGraphics" class="headerlink" title="0x01 另一种方法是使用 PGraphics"></a>0x01 另一种方法是使用 <code>PGraphics</code></h3><ol>
+<li>绘图时，新建一个 <code>PGraphics</code> 图层</li>
+<li>将所有图形按照你需要的原始尺寸绘制在这个图层上（使用方法：<a href="https://www.processing.org/reference/PGraphics.html" target="_blank" rel="noopener">PGraphics reference</a>）</li>
+<li>最后使用 <code>PGraphics</code> 对象的 <code>image(pgraphic, 0, 0, your_width, your_height)</code> 方法把图像缩放为你屏幕的大小。</li>
+</ol>
+<p><strong>一个示例</strong></p>
+<ul>
+<li><p>没有缩放的代码：</p>
+<pre><code>void setup() {
+    size(2000, 1000); // 创建一个2000x1000的草图
+}
+
+void draw() {
+    fill(255);
+    noStroke();
+    rect(500, 100, 1000, 500);
+    fill(0);
+    rect(0, 200, width, 100);
+    noFill();
+    strokeWeight(2);
+    stroke(255,0,0);
+    rect(0, 0, width, height);
+}
+</code></pre><p>  由于我的屏幕分辨率是1280x800，运行后显示不全：</p>
+  <img src="/blog/how-to-resize-a-large-sketch/broken.png" title="显示不全的草图">
+</li>
+</ul>
+<ul>
+<li><p>按照第一种方法修改：</p>
+<pre><code>void setup() {
+  size(2000, 1000); // 创建一个2000x1000的草图
+}
+
+void draw() {
+  scale(1280/2000.0); // 因为我的屏幕分辨率是1280x800，所以除一下得到比例数值
+
+  fill(255);
+  noStroke();
+  rect(500, 100, 1000, 500);
+  fill(0);
+  rect(0, 200, width, 100);
+  noFill();
+  strokeWeight(2);
+  stroke(255,0,0);
+  rect(0, 0, width, height);
+}
+</code></pre><p>  窗口依然是2000x1000，但是图像缩小到1280宽度了：</p>
+  <img src="/blog/how-to-resize-a-large-sketch/scale.png" title="scale 函数效果">
+</li>
+<li><p>按照第二种方法修改：</p>
+<pre><code>PGraphics graphic;  // 新建一个PG图层
+
+void setup() {
+  fullScreen(); // 创建一个全屏的草图，相当于：size(你屏幕宽度, 你屏幕高度)
+  graphic = createGraphics(2000, 1000); // 你需要的尺寸的图层
+}
+
+void draw() {
+  graphic.beginDraw();
+
+  graphic.fill(255);
+  graphic.noStroke();
+  graphic.rect(500, 100, 1000, 500);
+  graphic.fill(0);
+  graphic.rect(0, 200, graphic.width, 100);
+  graphic.noFill();
+  graphic.strokeWeight(2);
+  graphic.stroke(255,0,0);
+  graphic.rect(0, 0, graphic.width, graphic.height);
+
+  graphic.endDraw();
+
+  image(graphic, 0, 0, 1280, 640);  // 我的屏幕分辨率是1280x800，所以将2000x1000的草图等比例缩放到1280x640，你可以根据你的需要更改这两个参数
+</code></pre><p>  效果如下：</p>
+  <img src="/blog/how-to-resize-a-large-sketch/pg.png" title="PGraphics 效果">
+</li>
+</ul>
+<hr>
+<p>最后总结：这两种方法都是直接把图像缩小，而不只是缩放预览效果，只能用来临时看图像的效果，无论哪种都比较低效，所以建议还是尽量避免这种情况的发生。</p>
+
+                <div class="post-content-detail-detail blog-detail">
+                    <div class="blog-detail-item category">Tech Note</div>
+                    
+                    <div class="blog-detail-item tag">Processing</div>
+                    
+                    <div class="blog-detail-item tag">Creative Coding</div>
+                    
+                    <div class="blog-detail-item tag">创意编程</div>
+                    
+                    <div class="blog-detail-item tag">分辨率</div>
+                    
+                </div>
+                <div class="blog-comment">
+                    
+                        
+                            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container"></div>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'f62c7f9d3eef2282132e',
+        clientSecret: '1ee86d762d950f17edf5b4a7d275ef05fd361c1f',
+        id: md5(window.location.pathname),
+        repo: 'blog_comments',
+        owner: 'andiechu',
+        admin: 'andiechu',
+        distractionFreeMode: 'true'
+    })
+    gitalk.render('gitalk-container')
+</script>
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+    <div class="scrollbar">
+    <span></span>
+</div>
+    <footer class="">
+    <a href="../../index.html">Andie Chu /// cad0420</a>
+</footer>
+</body>
+</html>

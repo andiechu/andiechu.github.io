@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<!--
+
+          _____                    _____                    _____
+         /\    \                  /\    \                  /\    \
+        /::\    \                /::\    \                /::\    \
+       /::::\    \              /::::\    \              /::::\    \
+      /::::::\    \            /::::::\    \            /::::::\    \
+     /:::/\:::\    \          /:::/\:::\    \          /:::/\:::\    \
+    /:::/  \:::\    \        /:::/__\:::\    \        /:::/  \:::\    \
+   /:::/    \:::\    \      /::::\   \:::\    \      /:::/    \:::\    \
+  /:::/    / \:::\    \    /::::::\   \:::\    \    /:::/    / \:::\    \
+ /:::/    /   \:::\    \  /:::/\:::\   \:::\    \  /:::/    /   \:::\ ___\
+/:::/____/     \:::\____\/:::/  \:::\   \:::\____\/:::/____/     \:::|    |
+\:::\    \      \::/    /\::/    \:::\  /:::/    /\:::\    \     /:::|____|
+ \:::\    \      \/____/  \/____/ \:::\/:::/    /  \:::\    \   /:::/    /
+  \:::\    \                       \::::::/    /    \:::\    \ /:::/    /
+   \:::\    \                       \::::/    /      \:::\    /:::/    /
+    \:::\    \                      /:::/    /        \:::\  /:::/    /
+     \:::\    \                    /:::/    /          \:::\/:::/    /
+      \:::\    \                  /:::/    /            \::::::/    /
+       \:::\____\                /:::/    /              \::::/    /
+        \::/    /                \::/    /                \::/____/
+         \/____/                  \/____/                  ~~
+
+Hi! Welcome to my website. I hope you can find whatever you are looking for here.
+This website is still a beta version. Feel free to email me if you find any bugs or have any suggestion.
+
+A Friendly Reminder: Do NOT contact me if you are a stalker!
+
+-->
+
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119539904-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-119539904-2');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        
+            为Coding iOS 客户端添加 LBS 定位功能
+            ▼▲
+        
+        
+        cad0420
+    </title>
+
+    <meta name="description" content="config.description">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,700,900|Eczar:400,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/normalize.css">
+<link rel="stylesheet" href="../../css/fa.min.css">
+<link rel="stylesheet" href="../../css/github-gist.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/cad.css">
+
+    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">-->
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/highlight.pack.js"></script>
+<script src="../../js/slick.fixed.js"></script>
+<script src="../../js/md5.min.js"></script>
+    <script src="../../js/cad.js"></script>
+</head>
+<body>
+    <div class="page-loader">
+    <div class="loader">
+        <span class="loader-square row-1 col-1"></span>
+        <span class="loader-square row-1 col-2"></span>
+        <span class="loader-square row-1 col-3"></span>
+        <span class="loader-square row-2 col-1"></span>
+        <span class="loader-square row-2 col-2"></span>
+        <span class="loader-square row-2 col-3"></span>
+        <span class="loader-square row-3 col-1"></span>
+        <span class="loader-square row-3 col-2"></span>
+        <span class="loader-square row-3 col-3"></span>
+    </div>
+</div>
+    <nav class="menu"> <!-- show -->
+    <ul class="menu-list">
+        <li class="menu-list-item"><a href="../../about">About</a></li>
+        <li class="menu-list-item"><a href="../../portfolio">Portfolio</a></li>
+        <li class="menu-list-item"><a href="../../blog">Blog</a></li>
+    </ul>
+    <ul class="social-media-list">
+        <li class="social-media-list-item email">
+            <a href="mailto:angdichu@gmail.com">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item github">
+            <a href="https://github.com/andiechu" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item codepen">
+            <a href="https://codepen.io/cad0420/" target="_blank">
+                <i class="fab fa-codepen"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item instagram">
+            <a href="https://www.instagram.com/cad0420/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item vimeo">
+            <a href="https://vimeo.com/cad0420" target="_blank">
+                <i class="fab fa-vimeo-v"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item twitter">
+            <a href="https://twitter.com/andiechu" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+    <header>
+    <div class="menu-btn">  <!-- on-menu -->
+        <div class="menu-btn-line one">
+            <span class="menu-btn-dot one"></span>
+            <span class="menu-btn-dot two"></span>
+            <span class="menu-btn-dot three"></span>
+        </div>
+        <div class="menu-btn-line two">
+            <span class="menu-btn-dot one"></span>
+            <span class="menu-btn-dot two"></span>
+            <span class="menu-btn-dot three"></span>
+        </div>
+        <div class="menu-btn-line three">
+            <span class="menu-btn-dot one"></span>
+            <span class="menu-btn-dot two"></span>
+            <span class="menu-btn-dot three"></span>
+        </div>
+    </div>
+    <span class="menu-panel"></span>
+
+    
+        <div class="page-title">
+            <h1>Blog</h1>
+        </div>
+    
+</header>
+
+
+
+    <main class="main-post">
+    <div class="post-content content-div">
+        <div class="post-content-title">
+            <div class="post-content-title-hidden"></div>
+            <h1 class="post-content-detail-title">为Coding iOS 客户端添加 LBS 定位功能</h1>
+        </div>
+
+        <div class="post-content-blog">
+            <div class="post-content-time">
+                <time>03/06/2015 13:03</time>
+            </div>
+            <div class="post-content-detail markdown">
+                <h2 id="I-准备工作"><a href="#I-准备工作" class="headerlink" title="I 准备工作"></a>I 准备工作</h2><h3 id="项目中的需要考虑的问题与难点"><a href="#项目中的需要考虑的问题与难点" class="headerlink" title="项目中的需要考虑的问题与难点"></a>项目中的需要考虑的问题与难点</h3><ol>
+<li><p>地点信息怎样获取？怎样显示在地图上？</p>
+<p> Core Location Framework : 如何获得权限？以及向前（&lt; iOS 8）兼容的代码如何实现？</p>
+</li>
+<li><p>周边情况如何获取？大众点评或者其他的SDK吗？</p>
+<p> 难点：如果用了别人的SDK，自己创建一个地点，怎么保存？只是保存在自己手机中，还是怎样？</p>
+</li>
+<li><p>搜索用什么方法实现？</p>
+</li>
+<li><p>储存的格式？怎样实现的？</p>
+</li>
+<li><p>界面的实现：统一自定义的 View 的设计——刷新时候的插件？搜索框？还有其他的……都如何实现？</p>
+</li>
+</ol>
+<h3 id="分析结构"><a href="#分析结构" class="headerlink" title="分析结构"></a>分析结构</h3><ul>
+<li>“冒泡”页面中，每个 cell 都加一个显示地点的 UIButton，点击该地点 button 打开一个新视图，显示该地点的具体信息（或打开地图显示信息）</li>
+<li>“发布新冒泡”页面，加入一个“添加一个地点”的 UIButton，点击该 button 打开地点搜索页面。</li>
+<li>“搜索位置”的页面，经过测试，在微信中实现为：<ul>
+<li>下拉刷新，每次多20条；</li>
+<li>一旦此页面中加载过一次位置信息，关上GPS的权限，此时刷新周边商户的信息仍然可以刷新出、并且搜索时也可以搜索此位置周边的商户信息——分析此 location 信息已经储存在这个页面中了。但是在下一次从“发送信息”页面进入位置页面时，如果没有GPS的权限时不可以读出任何商户的（包括XX市这个信息也不可以）</li>
+<li>当已经选择了一个位置时，再进入此页面（例如想要修改时），无论有没有GPS权限，都会显示搜索框、“不显示位置”、已经选择的位置这三个cell。当有GPS权限，加载附近商户信息，所在的市的信息会插入在“不显示位置”与已经选择的两个之间（indexPath.row == 2）<br>+</li>
+</ul>
+</li>
+</ul>
+<h2 id="II-开始着手"><a href="#II-开始着手" class="headerlink" title="II 开始着手"></a>II 开始着手</h2><h3 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h3><ul>
+<li>界面上，没有使用 Cocoa 原有的 UITabView，而是使用了开源的 <a href="https://github.com/robbdimitrov/RDVTabBarController" target="_blank" rel="noopener">RDVTabBarController</a></li>
+<li>在页面的响应交互中（如：发布冒泡时没有输入文字或图片，“发布”按钮就 disabled），Coding iOS 客户端没有过多使用 delegate，而是使用了第三方依赖 <a href="https://github.com/ReactiveCocoa/ReactiveCocoa" target="_blank" rel="noopener">ReactiveCocoa</a></li>
+<li>有关布局中：内容比较复杂的 cell 一般是直接写死了长宽和坐标，根据内容变化。而需要用到 AutoLayout 的地方，用了第三方的 NSLayoutConstraints 的 wrapper：<a href="https://github.com/Masonry/Masonry" target="_blank" rel="noopener">Masonry</a></li>
+<li>关于 URL 资源的获取，Coding 客户端使用了 AFNetworking 框架。在源代码中，新建了一个 Coding_NetAPIManager 类，把所有请求都写成一个方法［也是蛮拼的］供其他 controller 调用</li>
+<li>搜索地点的页面，有一个搜索框，可以复用项目页面的搜索框格式</li>
+</ul>
+<h3 id="框架学习"><a href="#框架学习" class="headerlink" title="框架学习"></a>框架学习</h3><h4 id="Core-Location"><a href="#Core-Location" class="headerlink" title="Core Location"></a>Core Location</h4><ul>
+<li>搜集地点数据是一个高能源消耗的动作，所以要选择适当的地点服务，小心使用，防止资源的耗尽</li>
+<li>收集用户当前的地点信息有两种服务：<ol>
+<li>the standard location service：可以追踪的、特定精准度的、可配置的系统的</li>
+<li>the significant-change location service：只在仪器有很大变化（如 500 米或更甚）情况下进行更新</li>
+</ol>
+</li>
+<li>地点服务不可用的情况：在系统设置或 app 设置中用户禁用了地点服务；某个 app 用户拒绝了地点服务；仪器在飞行模式或特定的硬件无法开启使用</li>
+<li>当未关闭 significant-change location service 时，iOS app 会因此 suspended 或 terminated，地点服务在收到新地点信息时会唤醒你的 iOS app，唤醒时，app 会被放在后台，你将有很短的时间手动重启位置服务并处理地点信息（你必须在任何待处理的地点信息递送到之前手动重启后台的 location service）。 并且注意让 app 做一些小动作来防止被终止。</li>
+</ul>
+<h4 id="AFNetworking"><a href="#AFNetworking" class="headerlink" title="AFNetworking"></a>AFNetworking</h4><p>*</p>
+<h4 id="大众点评-API"><a href="#大众点评-API" class="headerlink" title="大众点评 API"></a>大众点评 API</h4><ul>
+<li>流程：注册应用 –&gt; 在自己开发的应用中：请求声称签名（sign）来认证 –&gt; 在后续请求中加入 appKey 与 sign</li>
+<li>认证过程：根据<a href="http://developer.dianping.com/app/documentation/signature" target="_blank" rel="noopener">官方网站上的文档</a>，<ol>
+<li>首先将不包括 appKey 与 secret 的所有要求的参数的 key 根据字符串，从 a 到 z 排序，连接成为一个字符串。然后将 appKey 的 value 值放在最前面作为前缀，secret 的 value 值放在最后面作为后缀。</li>
+<li>将这个字符串进行 SHA-1 加密</li>
+<li>将加密后的字符串进行 16 进制转码，转为大写<br>4.</li>
+</ol>
+</li>
+</ul>
+<h4 id="iOS-中的单例模式"><a href="#iOS-中的单例模式" class="headerlink" title="iOS 中的单例模式"></a>iOS 中的单例模式</h4><p>*</p>
+<blockquote>
+<p>未完待续ing……</p>
+</blockquote>
+
+                <div class="post-content-detail-detail blog-detail">
+                    <div class="blog-detail-item category">Tech Note</div>
+                    
+                    <div class="blog-detail-item tag">iOS</div>
+                    
+                    <div class="blog-detail-item tag">Core Location</div>
+                    
+                    <div class="blog-detail-item tag">客户端开发</div>
+                    
+                </div>
+                <div class="blog-comment">
+                    
+                        
+                            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container"></div>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'f62c7f9d3eef2282132e',
+        clientSecret: '1ee86d762d950f17edf5b4a7d275ef05fd361c1f',
+        id: md5(window.location.pathname),
+        repo: 'blog_comments',
+        owner: 'andiechu',
+        admin: 'andiechu',
+        distractionFreeMode: 'true'
+    })
+    gitalk.render('gitalk-container')
+</script>
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+    <div class="scrollbar">
+    <span></span>
+</div>
+    <footer class="">
+    <a href="../../index.html">Andie Chu /// cad0420</a>
+</footer>
+</body>
+</html>

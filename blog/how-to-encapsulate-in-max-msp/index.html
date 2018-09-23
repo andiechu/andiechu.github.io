@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<!--
+
+          _____                    _____                    _____
+         /\    \                  /\    \                  /\    \
+        /::\    \                /::\    \                /::\    \
+       /::::\    \              /::::\    \              /::::\    \
+      /::::::\    \            /::::::\    \            /::::::\    \
+     /:::/\:::\    \          /:::/\:::\    \          /:::/\:::\    \
+    /:::/  \:::\    \        /:::/__\:::\    \        /:::/  \:::\    \
+   /:::/    \:::\    \      /::::\   \:::\    \      /:::/    \:::\    \
+  /:::/    / \:::\    \    /::::::\   \:::\    \    /:::/    / \:::\    \
+ /:::/    /   \:::\    \  /:::/\:::\   \:::\    \  /:::/    /   \:::\ ___\
+/:::/____/     \:::\____\/:::/  \:::\   \:::\____\/:::/____/     \:::|    |
+\:::\    \      \::/    /\::/    \:::\  /:::/    /\:::\    \     /:::|____|
+ \:::\    \      \/____/  \/____/ \:::\/:::/    /  \:::\    \   /:::/    /
+  \:::\    \                       \::::::/    /    \:::\    \ /:::/    /
+   \:::\    \                       \::::/    /      \:::\    /:::/    /
+    \:::\    \                      /:::/    /        \:::\  /:::/    /
+     \:::\    \                    /:::/    /          \:::\/:::/    /
+      \:::\    \                  /:::/    /            \::::::/    /
+       \:::\____\                /:::/    /              \::::/    /
+        \::/    /                \::/    /                \::/____/
+         \/____/                  \/____/                  ~~
+
+Hi! Welcome to my website. I hope you can find whatever you are looking for here.
+This website is still a beta version. Feel free to email me if you find any bugs or have any suggestion.
+
+A Friendly Reminder: Do NOT contact me if you are a stalker!
+
+-->
+
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119539904-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-119539904-2');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        
+            Max/MSP 中的打包操作
+            ▼▲
+        
+        
+        cad0420
+    </title>
+
+    <meta name="description" content="page.summary">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,700,900|Eczar:400,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/normalize.css">
+<link rel="stylesheet" href="../../css/fa.min.css">
+<link rel="stylesheet" href="../../css/github-gist.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/cad.css">
+
+    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">-->
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/highlight.pack.js"></script>
+<script src="../../js/slick.fixed.js"></script>
+<script src="../../js/md5.min.js"></script>
+    <script src="../../js/cad.js"></script>
+</head>
+<body>
+    <div class="page-loader">
+    <div class="loader">
+        <span class="loader-square row-1 col-1"></span>
+        <span class="loader-square row-1 col-2"></span>
+        <span class="loader-square row-1 col-3"></span>
+        <span class="loader-square row-2 col-1"></span>
+        <span class="loader-square row-2 col-2"></span>
+        <span class="loader-square row-2 col-3"></span>
+        <span class="loader-square row-3 col-1"></span>
+        <span class="loader-square row-3 col-2"></span>
+        <span class="loader-square row-3 col-3"></span>
+    </div>
+</div>
+    <nav class="menu"> <!-- show -->
+    <ul class="menu-list">
+        <li class="menu-list-item"><a href="../../about">About</a></li>
+        <li class="menu-list-item"><a href="../../portfolio">Portfolio</a></li>
+        <li class="menu-list-item"><a href="../../blog">Blog</a></li>
+    </ul>
+    <ul class="social-media-list">
+        <li class="social-media-list-item email">
+            <a href="mailto:angdichu@gmail.com">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item github">
+            <a href="https://github.com/andiechu" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item codepen">
+            <a href="https://codepen.io/cad0420/" target="_blank">
+                <i class="fab fa-codepen"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item instagram">
+            <a href="https://www.instagram.com/cad0420/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item vimeo">
+            <a href="https://vimeo.com/cad0420" target="_blank">
+                <i class="fab fa-vimeo-v"></i>
+            </a>
+        </li>
+        <li class="social-media-list-item twitter">
+            <a href="https://twitter.com/andiechu" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+    <header>
+    <div class="menu-btn">  <!-- on-menu -->
+        <div class="menu-btn-line one">
+            <span class="menu-btn-dot one"></span>
+            <span class="menu-btn-dot two"></span>
+            <span class="menu-btn-dot three"></span>
+        </div>
+        <div class="menu-btn-line two">
+            <span class="menu-btn-dot one"></span>
+            <span class="menu-btn-dot two"></span>
+            <span class="menu-btn-dot three"></span>
+        </div>
+        <div class="menu-btn-line three">
+            <span class="menu-btn-dot one"></span>
+            <span class="menu-btn-dot two"></span>
+            <span class="menu-btn-dot three"></span>
+        </div>
+    </div>
+    <span class="menu-panel"></span>
+
+    
+        <div class="page-title">
+            <h1>Blog</h1>
+        </div>
+    
+</header>
+
+
+
+    <main class="main-post">
+    <div class="post-content content-div">
+        <div class="post-content-title">
+            <div class="post-content-title-hidden"></div>
+            <h1 class="post-content-detail-title">Max/MSP 中的打包操作</h1>
+        </div>
+
+        <div class="post-content-blog">
+            <div class="post-content-time">
+                <time>05/05/2018 23:05</time>
+            </div>
+            <div class="post-content-detail markdown">
+                <h2 id="0x00-随手打包：使用-patcher-对象进行打包"><a href="#0x00-随手打包：使用-patcher-对象进行打包" class="headerlink" title="0x00 随手打包：使用 patcher 对象进行打包"></a>0x00 随手打包：使用 patcher 对象进行打包</h2><ul>
+<li>使用对象：<code>patcher</code>（简称 <code>p</code>）</li>
+<li>其他使用的对象：<code>inlet</code> 和 <code>outlet</code></li>
+<li>具体使用方法：新建 patcher 对象，并且在新弹出的窗口中创建自己的模块化逻辑。使用 inlet 作为输入的代替；outlet 作为输出的代替。或者选中要打包的对象，按 <code>CMD/Control</code> + <code>SHIFT</code> + <code>E</code> 快捷键，快速新建并打包好一个 patcher.</li>
+</ul>
+<h2 id="0x01-多次复用：抽象操作（Abstraction）"><a href="#0x01-多次复用：抽象操作（Abstraction）" class="headerlink" title="0x01 多次复用：抽象操作（Abstraction）"></a>0x01 多次复用：抽象操作（Abstraction）</h2><p>上述 subpatcher 方法虽然简单，但是不太方便复用。Max/MSP 中还有另一个方法可以重新实现这一点，这个方法叫做——抽象操作（abstraction）。</p>
+<p>创建一个 abstraction 其实酒是新建一个 patcher 并保存在另一个独立的文件中（须要在 Max 定义的文件路径中）。然后你就可以像新建一个对象一样，可以直接写它的名字进行使用。</p>
+<p>在 abstraction 的 patcher 中加入 <code>#1</code>、<code>#2</code> 这类占位符，代表它的参数，如下图所示：</p>
+<img src="/blog/how-to-encapsulate-in-max-msp/create-abstraction.png" title="Abstraction 的用法及参数的使用">
+<h2 id="0x02-白盒打包：bpatcher"><a href="#0x02-白盒打包：bpatcher" class="headerlink" title="0x02 白盒打包：bpatcher"></a>0x02 白盒打包：<code>bpatcher</code></h2><p>以上两种方法在使用时，在不打开包文件的时候是看不到包内各种数据的变化，只能看到输入对输出结果的影响——所谓的“黑盒”操作。但是如果我们想要看到包内的各种对象是怎么变化的呢？这时我们就需要 <code>bpatcher</code> 对象。</p>
+<p>使用方法：</p>
+<ol>
+<li><p>新建一个文件，把你想要的对象、inlet、outlet 全放进去，然后保存为一个 abstraction</p>
+ <img src="/blog/how-to-encapsulate-in-max-msp/create-bpatcher-1.png" title="新建一个abstraction">
+</li>
+<li><p>在主文件中，新建一个 bpatcher 对象。</p>
+</li>
+<li><p>选择这个 bpatcher 对象，并打开检视器，在监视器中的 <code>Fatcher File</code> 中选择刚才你保存的 abstraction</p>
+ <img src="/blog/how-to-encapsulate-in-max-msp/create-bpatcher-2.png" title="新建 bpatcher">
+</li>
+<li><p>搞掂！随心所欲的用吧。</p>
+ <img src="/blog/how-to-encapsulate-in-max-msp/create-bpatcher-3.png" title="可以看到 UI 的哦">
+</li>
+</ol>
+<h2 id="0x03-快速创建：小片段-Snippet"><a href="#0x03-快速创建：小片段-Snippet" class="headerlink" title="0x03 快速创建：小片段 Snippet"></a>0x03 快速创建：小片段 <code>Snippet</code></h2><p>其实这个并不是打包（encapsulation）操作！只是一种快速创建和复用的操作。如果你创建了一些对象的组合，你觉得还不错，以后会经常用到，你可以把他们保存成为“<code>snippet</code>”，见 Max 界面最右边的曲别针型按钮。</p>
+<img src="/blog/how-to-encapsulate-in-max-msp/snippets.png" title="Snippets">
+<p>使用方法：</p>
+<ol>
+<li>选中你需要保存的组合</li>
+<li>鼠标右键单击，在弹出的菜单中选择“<code>Save Snippet</code>”，在下方出现的文本框中为片段命名</li>
+<li>以后你想使用这个片段时，点击软件右边的 Snippets 按钮并选择你之前创建的片段，就可以快速创建了</li>
+</ol>
+
+                <div class="post-content-detail-detail blog-detail">
+                    <div class="blog-detail-item category">Tech Note</div>
+                    
+                    <div class="blog-detail-item tag">Creative Coding</div>
+                    
+                    <div class="blog-detail-item tag">创意编程</div>
+                    
+                    <div class="blog-detail-item tag">Max/MSP/Jitter</div>
+                    
+                    <div class="blog-detail-item tag">Max</div>
+                    
+                </div>
+                <div class="blog-comment">
+                    
+                        
+                            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container"></div>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: 'f62c7f9d3eef2282132e',
+        clientSecret: '1ee86d762d950f17edf5b4a7d275ef05fd361c1f',
+        id: md5(window.location.pathname),
+        repo: 'blog_comments',
+        owner: 'andiechu',
+        admin: 'andiechu',
+        distractionFreeMode: 'true'
+    })
+    gitalk.render('gitalk-container')
+</script>
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+    <div class="scrollbar">
+    <span></span>
+</div>
+    <footer class="">
+    <a href="../../index.html">Andie Chu /// cad0420</a>
+</footer>
+</body>
+</html>
