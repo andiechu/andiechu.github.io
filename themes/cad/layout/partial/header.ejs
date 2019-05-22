@@ -1,0 +1,11 @@
+<header>
+    <a href="/"><img alt="<%- config.title %>" src="<%- theme.site_logo %>"></a>
+    <nav>
+        <ul>
+            <% for(var m in theme.menu) { %>
+                <a href="<%- url_for(theme.menu[m]) %>"><li><%- m %></li></a>
+            <% } %>
+        </ul>
+    </nav>
+    <hr>
+</header>

@@ -1,0 +1,59 @@
+<main class="main-portfolio">
+    <div class="portfolio-content content-div">
+        <div class="portfolio-paginator">
+            <%
+                projects = site.categories.findOne({name: 'portfolio'}).posts.sort('date', -1);
+                portfolio_number = projects.count();
+                // console.log(portfolio_number)
+
+                for (var i = 0; i < portfolio_number; i++) {
+            %>
+                <div class="portfolio-paginator-item" id="<%- "project-" + (i+1) %>"></div>
+            <% } %>
+        </div>
+
+        <div class="portfolio-project-list">
+            <div class="carousel-container">
+                <div class="carousel">
+                    <%
+                    projects.forEach(function(p) {
+                    %>
+                    <div class="project-list-item carousel-item">
+                        <a href="<%- p.path %>">
+                            <h2 class="project-title outline"><%- p.title %></h2>
+                            <div class="project-desc">
+                                <%- p.work_category %>
+                                |
+                                <%
+                                    var tag_idx = 0;
+                                p.tags.forEach(function(t){
+                                if (tag_idx !== 0) { %>
+                                ·
+                                <% } %>
+                                <%- t.name %>
+                                <%
+                                    tag_idx++;
+                                }) %>
+                            </div>
+                        </a>
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+
+        <div class="portfolio-project-thumbnail-list">
+            <%
+            var i = 0;
+            projects.forEach(function(p) { %>
+                <div class="portfolio-project-thumbnail<% if (i == 0) { %> show<% } %>" id="project-cover-<%- i++ +1 %>">
+                    <img src="<%- p.path + p.cover_img %>">
+                </div>
+            <% }) %>
+        </div>
+
+
+    </div>
+</main>
+
+<div class="portfolio-scroll-hint">Drag and Scroll ⇊</div>

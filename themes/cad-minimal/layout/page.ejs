@@ -1,0 +1,47 @@
+
+<%
+   var page_url = page.path;
+   var page_number = 1;
+   if (page_url.match(/\d+/)) {
+       page_number = Math.floor(page_url.match(/\d+/)[0]);
+   }
+
+   if (page_url.indexOf('about') > -1) { %>
+    <%- partial('partial/header', {page_title: 'About'}) %>
+    <%- partial('partial/about-content') %>
+<% } else if (page_url.indexOf('blog') > -1) { %>
+    <%- partial('partial/header', {page_title: 'Blog'}) %>
+
+    <% if (page_url.indexOf('index.html') > -1) { %>
+        <%- partial('partial/categories-content') %>
+    <% } else if (page_url.indexOf('page') > -1) { %>
+        <%- partial('partial/blog-content', {
+                page_number: page_number,
+                archive_categories: false,
+                archive_tags: false
+        }) %>
+    <% } else if (page_url.indexOf('categories') > -1) { %>
+        <% if (page_url.indexOf('categories.html') > -1) { %>
+            <%- partial('partial/categories-content') %>
+        <% } else { %>
+            <%- partial('partial/blog-content', {
+                    page_number: page_number,
+                    archive_categories: true,
+                    category_chosen: page_url.split(/\//)[2].split(/\./)[0],
+                    archive_tags: false
+                }) %>
+        <% } %>
+    <% } else if (page_url.indexOf('tags') > -1) { %>
+        <% if (page_url.indexOf('tags.html') > -1) { %>
+            <%- partial('partial/tags-content') %>
+        <% } else { %>
+            <%- partial('partial/blog-content', {
+                page_number: page_number,
+                archive_categories: false,
+                archive_tags: true,
+                tag_chosen: page_url.split(/\//)[2].split(/\./)[0]
+            }) %>
+        <% } %>
+    <% } %>
+
+<% } %>

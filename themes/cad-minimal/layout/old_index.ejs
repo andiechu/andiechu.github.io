@@ -1,0 +1,16 @@
+<% site.posts.forEach(function(post) { %>
+    <h2><a href="<%- post.path %>"><%- post.title %></a></h2>
+    <time><%- date(post.date, 'MMMM Do YYYY, HH:MM') %></time>
+    <p><%- post.summary %></p>
+<% }) %>
+
+
+
+<%- trim('    aaaa    ') %> <br>
+<%- titlecase('this is my title, but i don\'t know how to captalize it.') %> <br>
+
+<% for (var value in site.data.myData) { %>
+
+    <%- value %> : <%- site.data.myData[value] %> <br>
+
+<% } %>

@@ -1,0 +1,16 @@
+<%- partial('partial/header', {page_title: 'Blog'}) %>
+
+
+<%
+var paginator_regex = new RegExp('/blog/\\d+/');
+if (page.path.match(paginator_regex)) {
+    var page_number = Math.floor(page.path.match(/\d+/)[0]);
+%>
+    <%- partial('partial/blog-content', {
+            page_number: page_number,
+            archive_categories: false,
+            archive_tags: false
+        }) %>
+<% } else { %>
+    <%- partial('partial/post-content') %>
+<% }%>

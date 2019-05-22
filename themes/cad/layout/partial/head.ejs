@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- TODO 下面自适应的部分需要弄明白 -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+    <meta name="description" content="Blog and Portfolio for Andie Chu, AKA cad0420, a coder and new media artist who lives currently in Shanghai, China.">
+    <meta name="author" content="Andie Chu">
+
+    <!-- define title of each title -->
+    <%
+        var title = '';
+        if (is_home()) {
+            title = config.title;
+        } else if (is_post()) {
+            title = page.title;
+        } else if (is_category()) {
+            title = page.category;
+        } else if(is_tag()) {
+            title = page.tag;
+        }
+    %>
+
+    <title>
+        <% if (title) %><%= title %> | <%= config.title %>
+    </title>
+
+    <link rel="shortcut icon" href="<%- theme.favicon %>" type="image/x-icon">
+    <%- css('css/cad') %>
+
+    <!-- TODO 还应该加GA之类的检测代码 -->
+</head>

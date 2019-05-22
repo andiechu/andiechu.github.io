@@ -1,0 +1,45 @@
+<main class="main-categories">
+    <div class="categories-content content-div">
+        <div class="blank"></div>
+        <ul class="categories-list">
+            <%
+            var catObjList = {};
+            site.posts.forEach(function(post) {
+                if (catObjList[post.blog_category]) {
+                    catObjList[post.blog_category] = catObjList[post.blog_category]+1;
+                } else if (post.blog_category) {
+                    catObjList[post.blog_category] = 1;
+                }
+            });
+
+            var path_base = page.path.split(/.html/)[0];
+
+            var cats = Object.keys(catObjList);
+            cats.forEach(function(c) {
+                var c_path = c.replace(/\s/g, '-').toLowerCase()
+            %>
+            <li><a href="<%- '/' + path_base + '/' + c_path + '.html' %>"><%- c %></a></li>
+            <% }) %>
+
+        </ul>
+    </div>
+
+    <div class="categories-background outline">
+        <span>C</span>
+        <span>A</span>
+        <span>T</span>
+        <span>E</span>
+        <span>G</span>
+        <span>O</span>
+        <span>R</span>
+        <span>I</span>
+        <span>E</span>
+        <span>S</span>
+    </div>
+
+    <div class="blog-filter">
+        <a href="/blog/tags.html">Tags</a>
+        <span>|</span>
+        <a href="/blog/categories.html">Categories</a>
+    </div>
+</main>

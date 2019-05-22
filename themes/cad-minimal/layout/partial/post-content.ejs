@@ -1,0 +1,77 @@
+<main class="main-post">
+    <div class="post-content content-div">
+        <div class="post-content-title">
+            <div class="post-content-title-hidden"></div>
+            <h1 class="post-content-detail-title"><%- page.title %></h1>
+        </div>
+
+        <div class="post-content-blog">
+            <div class="post-content-time">
+                <time><%- date(page.date, 'MM/DD/YYYY HH:MM') %></time>
+            </div>
+            <div class="post-content-detail markdown">
+                <%- page.content %>
+                <div class="post-content-detail-detail blog-detail">
+                    <div class="blog-detail-item category"><%= page.blog_category %></div>
+                    <% page.tags.forEach(function(tag) { %>
+                    <div class="blog-detail-item tag"><%= tag.name %></div>
+                    <% }) %>
+                </div>
+                <div class="blog-comment">
+                    <% if(page.comments == true) { %>
+                        <% if(theme.disqus.on == true) { %>
+                            <div id="disqus_thread"></div>
+                            <script>
+                                var disqus_onload = false;
+                                const disques_timeout = 3000;
+
+                                /**
+                                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+                                var disqus_config = function () {
+                                    this.page.url = "<%- url %>";  // Replace PAGE_URL with your page's canonical URL variable
+                                    this.page.identifier = "<%- page.path %>"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                                };
+
+                                (function() { // DON'T EDIT BELOW THIS LINE
+                                    var d = document, s = d.createElement('script');
+                                    s.src = 'https://<%- theme.disqus %>.disqus.com/embed.js';
+                                    s.setAttribute('data-timestamp', +new Date());
+                                    // add-begin
+                                    s.onload = function() {
+                                        disqus_onload = true;
+                                    };
+                                    s.onerror = function() {
+                                        disqus_onload = false;
+                                    };
+                                    // add-end
+
+                                    (d.head || d.body).appendChild(s);
+
+                                    //add-begin
+                                    setTimeout(function() {
+                                        if (!disqus_onload) {
+                                            var disqus_fail_hint = d.createElement('p');
+                                            disqus_fail_hint.innerText = '你所在地区可能不能访问本网站的 Disqus 评论，请切换速度更快的网络服务商，或使用科学上网';
+                                            disqus_fail_hint.style.fontSize = "0.8em";
+                                            disqus_fail_hint.style.paddingLeft = "10px";
+                                            disqus_fail_hint.style.borderLeft = "2px solid #fff";
+                                            d.querySelector('#disqus_thread').appendChild(disqus_fail_hint);
+                                        }
+                                    }, disques_timeout);
+                                    //add-end
+                                })();
+                            </script>
+                            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                        <% } else if(theme.gitalk.on == true) { %>
+                            <%- partial('partial/comment') %>
+                        <% } %>
+                    <% } else { %>
+                    <p>The comment area of this blog is closed.</p>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

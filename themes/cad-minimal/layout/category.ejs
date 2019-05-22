@@ -1,0 +1,12 @@
+<% if (page.path.indexOf('blog') > -1) { %>
+    <%- partial('partial/header', {page_title: 'Blog'}) %>
+    <%- partial('partial/blog-content', {
+            page_number: 1,
+            archive_categories: false,
+            archive_tags: false
+    }) %>
+<% } else if (page.path.indexOf('portfolio') > -1) { %>
+    <%- partial('partial/header', {page_title: 'Portfolio'}) %>
+    <%- partial('partial/portfolio-content') %>
+<% } %>
+

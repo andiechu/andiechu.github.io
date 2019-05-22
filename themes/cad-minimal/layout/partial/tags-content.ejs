@@ -1,0 +1,42 @@
+<main class="main-tags">
+    <div class="tags-content content-div">
+        <div class="blank"></div>
+        <ul class="tags-list">
+            <%
+            var tagsObjList = {};
+            site.categories.findOne({name: 'blog'}).posts.forEach(function(blog) {
+                blog.tags.forEach(function(tag) {
+                    var tname = tag.name
+                    if (tagsObjList[tname]) {
+                        tagsObjList[tname] = tagsObjList[tname] + 1;
+                    } else {
+                        tagsObjList[tname] = 1;
+                    }
+                })
+            })
+
+            var path_base = page.path.split(/.html/)[0];
+
+            Object.keys(tagsObjList).forEach(function(tag) {
+                var t_path = tag.replace(/[\s\/]/g, '-').toLowerCase()
+                // console.log(t_path)
+            %>
+                <li><a href="<%- '/' + path_base + '/' + t_path + '.html' %>">[ <%- tag %> ]</a></li>
+            <% }); %>
+
+        </ul>
+    </div>
+
+    <div class="tags-background outline">
+        <span>T</span>
+        <span>A</span>
+        <span>G</span>
+        <span>S</span>
+    </div>
+
+    <div class="blog-filter">
+        <a href="/blog/tags.html">Tags</a>
+        <span>|</span>
+        <a href="/blog/categories.html">Categories</a>
+    </div>
+</main>

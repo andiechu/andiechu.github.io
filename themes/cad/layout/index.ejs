@@ -1,0 +1,33 @@
+<%- partial('widget/taglist') %>
+
+<main>
+    <% var pg_num = page.total; %>
+
+    <% page.posts.forEach(function(post) { %>
+        <% var p_cats = post.categories; %>
+        <% if (p_cats.length == 0 || p_cats.first().name === 'blog') { %>
+            <a class="" href="<%- url_for(post.path) %>">
+                <section>
+                    <article>
+                        <time datetime="<%- date(post.date, 'YYYY-MM-DD hh:mm:ssZ') %>"><%- date(post.date, 'MM/DD/YYYY') %></time>
+                        <h1><%- post.title %></h1>
+                        <p><%- post.excerpt %></p>
+                        <div class="">
+                            <svg></svg>
+                            <svg></svg>
+                        </div>
+                    </article>
+                </section>
+            </a>
+        <% } %>
+    <% }) %>
+
+
+
+
+
+
+
+
+</main>
+

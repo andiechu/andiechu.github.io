@@ -1,0 +1,30 @@
+# Header
+menu:
+  Home: /
+  Blog: /blog
+  Portfolio: /portfolio
+  About: /about
+rss: /atom.xml
+
+# blogs
+blog_per_page: 5
+
+# Miscellaneous
+google_analytics:
+gauges_analytics:
+favicon: /favicon.png
+disqus:
+  id: andiechu
+  on: false
+google_plus:
+fb_admins:
+fb_app_id:
+
+# comments
+gitalk:
+  on: true
+  owner: andiechu
+  repo: blog_comments
+  admin: ['andiechu']
+  clientID: f62c7f9d3eef2282132e
+  clientSecret: 1ee86d762d950f17edf5b4a7d275ef05fd361c1f

@@ -1,0 +1,104 @@
+<main class="main-blog">
+    <% if (archive_categories) { %>
+        <div class="header-secondary">
+            Categories: <span><%- titlecase(category_chosen.replace(/-/g, ' ')) %></span>
+        </div>
+    <% } else if (archive_tags) { %>
+        <div class="header-secondary">
+            Tags: <span><%- titlecase(tag_chosen.replace(/-/g, ' ')) %></span>
+        </div>
+    <% } %>
+
+    <div class="blog-content content-div">
+        <%
+        var paging_base_url;
+        var blog_number = 0;
+        var page_total_number;
+        var temp_month = '';
+        var post_list = [];
+
+        if (archive_categories) {
+            paging_base_url = '/blog/categories/' + category_chosen + '/';
+            blog_number = site.categories.findOne({name: 'blog'}).posts.find({blog_category: titlecase(category_chosen.replace(/-/, ' '))}).count();
+            post_list = site.categories.findOne({name: 'blog'}).posts.find({blog_category: titlecase(category_chosen.replace(/-/, ' '))}).sort('date', -1).slice(theme.blog_per_page*(page_number-1), theme.blog_per_page*page_number);
+        } else if (archive_tags) {
+            paging_base_url = '/blog/tags/' + tag_chosen + '/';
+
+            site.categories.findOne({name: 'blog'}).posts.sort('date', -1).forEach(function(blog) {
+                blog.tags.forEach(function(tag) {
+                    var tag_lowercase = tag.name.replace(/[\s\/]/g, '-').toLowerCase();
+                    if (tag_lowercase === tag_chosen) {
+                        blog_number++;
+                        post_list.push(blog);
+                    }
+                })
+            })
+
+            post_list = post_list.slice(theme.blog_per_page*(page_number-1), theme.blog_per_page*page_number);
+
+        } else {
+            paging_base_url = '/blog/page/';
+            blog_number = site.categories.findOne({name: 'blog'}).posts.count();
+            post_list = site.categories.findOne({name: 'blog'}).posts.sort('date', -1).slice(theme.blog_per_page*(page_number-1), theme.blog_per_page*page_number);
+        }
+
+        page_total_number = Math.ceil(blog_number / theme.blog_per_page);
+
+
+
+        post_list.forEach(function(post) { %>    <!--slice(begin, end_opt)-->
+            <section class="blog-item">
+        <%
+            var blog_month = date(post.date,'M')
+            // console.log(moment(blog_month, 'M').format('MMMM').toUpperCase())
+            if (blog_month != temp_month) {
+                temp_month = blog_month
+        %>
+                <div class="month-background outline"><%= moment(temp_month, 'M').format('MMMM').toUpperCase() %></div>
+            <% } %>
+
+                <div class="blog-intro">
+                    <div class="blog-intro-time">
+                        <time><%- date(post.date, 'MM/DD/YYYY') %></time>
+                    </div>
+                    <div class="blog-intro-text">
+                        <h2 class="blog-title"><a href="<%- url_for(post.path) %>"><%= post.title %></a></h2>
+                        <p class="blog-summary"><%= post.summary %> ... <a href="<%- url_for(post.path) %>">READ MORE</a></p>
+                        <div class="blog-detail">
+                            <div class="blog-detail-item category"><%= post.blog_category %></div>
+                            <% post.tags.forEach(function(tag) { %>
+                                <div class="blog-detail-item tag"><%= tag.name %></div>
+                            <% }) %>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <% }) %>
+
+        <div class="blog-paginator">
+            <div class="blog-paginator-prev">
+                <% if(page_number < page_total_number) { %>
+                <a href="<%- paging_base_url + (page_number+1) %>.html">OLDER</a>
+                <% } %>
+
+            </div>
+            <div class="blog-paginator-page">
+                <span class="page-current"><%- page_number %></span>
+                /
+                <span class="page-total"><%- page_total_number %></span>
+            </div>
+            <div class="blog-paginator-next">
+                <% if(page_number > 1) { %>
+                <a href="<%- paging_base_url + (page_number-1) %>.html">NEWER</a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+    <div class="blog-filter">
+        <a href="/blog/tags.html">Tags</a>
+        <span>|</span>
+        <a href="/blog/categories.html">Categories</a>
+    </div>
+</main>
+
